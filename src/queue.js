@@ -22,23 +22,28 @@ class Queue {
         this.last.next = node;
       }
 
-      // make the new node the last item on the queue
       this.last = node;
     }
 
     dequeue() {
-      // if queue is empty, nothing to return
       if(this.first === null) {
         return;
       }
+
       const node = this.first;
       this.first = this.first.next;
 
-      // if this is the last item in the queue
       if(node === this.last) {
         this.last = null;
       }
       return node.value;
+    }
+
+    peek() {
+      if (this.first.next === null) {        
+        return 'queue is empty';
+      }
+      return this.first.data;
     }
 }
 

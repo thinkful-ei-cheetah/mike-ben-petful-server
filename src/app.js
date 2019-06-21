@@ -9,7 +9,7 @@ const { NODE_ENV } = require('./config');
 
 const catRouter = require('./router/catRouter');
 const dogRouter = require('./router/dogRouter');
-const userRouter = require('./router/userRouter');
+const peopleRouter = require('./router/peopleRouter');
 
 const app = express();
 app.use(express.json());
@@ -24,7 +24,7 @@ app.use(helmet());
 
 app.use(catRouter);
 app.use(dogRouter);
-app.use(userRouter);
+app.use(peopleRouter);
 
 app.get('/', (req, res) => {
   res.send('Hello, world!');
