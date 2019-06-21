@@ -6,13 +6,13 @@ const { dogs }  = require('../data/dogData');
 const dogRouter = express.Router();
 
 dogRouter
-  .route('/dog')
+  .route('/api/dogs')
   .get((req, res) => {
     return res.json(dogs);
   })
 
 dogRouter
-  .route('/dog/delete')
+  .route('/api/dogs/delete')
   .delete((req, res) => {
     dogs.enqueue(
       dogs.dequeue()

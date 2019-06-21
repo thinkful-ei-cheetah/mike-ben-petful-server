@@ -6,13 +6,13 @@ const { people }  = require('../data/peopleData');
 const peopleRouter = express.Router();
 
 peopleRouter
-  .route('/')
+  .route('/api/people')
   .get((req, res) => {
     return res.json(people);
   })
 
 peopleRouter
-  .route('/')
+  .route('/api/people/delete')
   .delete((req, res) => {
     people.enqueue(
       people.dequeue()

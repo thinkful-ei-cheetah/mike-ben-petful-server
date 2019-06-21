@@ -6,13 +6,13 @@ const { cats }  = require('../data/catData');
 const catRouter = express.Router();
 
 catRouter
-  .route('/cat')
+  .route('/api/cats')
   .get((req, res) => {
     return res.json(cats);
   })
 
 catRouter
-  .route('/cat/delete')
+  .route('/api/cats/delete')
   .delete((req, res) => {
     cats.enqueue(
       cats.dequeue()
